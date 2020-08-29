@@ -21,8 +21,21 @@ public class MutantCellManager : MonoBehaviour
 
     void CallAllCellDoDuplicate(MutantCell owner)
     {
-        Debug.Log("CallAllCellDoDuplicate");
-        AllCellDoDuplicate();
+        
+        CancelInvoke("AllCellDoDuplicate");
+        int sum = 0;
+        foreach (var go in cells)
+        {
+            if(go != null)
+            {
+                sum++;
+                Destroy(go.gameObject);
+            }
+            
+        }
+        Debug.Log("總數 = " + sum);
+        //AllCellDoDuplicate();
+
     }
 
     void AllCellDoDuplicate()
@@ -41,7 +54,12 @@ public class MutantCellManager : MonoBehaviour
                     newObj.transform.SetPositionAndRotation(position, Quaternion.identity);
                     _cells.Add(newObj.GetComponent<MutantCell>());
                 }
+                //cells.Remove(cells[i]);
                 Destroy(cells[i].gameObject);
+            }
+            else
+            {
+                
             }
         }
         for (int i = 0; i < _cells.Count; i++)
