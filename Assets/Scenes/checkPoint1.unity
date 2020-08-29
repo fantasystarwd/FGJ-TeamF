@@ -1358,6 +1358,14 @@ PrefabInstance:
       propertyPath: flowchart
       value: 
       objectReference: {fileID: 1927485375}
+    - target: {fileID: 1905907662, guid: b9a0b7f2144188244b7216b92acafc86, type: 3}
+      propertyPath: TotalTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905907662, guid: b9a0b7f2144188244b7216b92acafc86, type: 3}
+      propertyPath: resultText
+      value: 
+      objectReference: {fileID: 84941714}
     - target: {fileID: 911167107506542657, guid: b9a0b7f2144188244b7216b92acafc86,
         type: 3}
       propertyPath: m_Name
@@ -1468,6 +1476,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3479334106065763063, guid: b9a0b7f2144188244b7216b92acafc86,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479334106065763063, guid: b9a0b7f2144188244b7216b92acafc86,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6361857425214023331, guid: b9a0b7f2144188244b7216b92acafc86,
         type: 3}
       propertyPath: m_Sprite
@@ -1476,6 +1494,18 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9a0b7f2144188244b7216b92acafc86, type: 3}
+--- !u!1 &1895806997 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3832244810818683912, guid: b9a0b7f2144188244b7216b92acafc86,
+    type: 3}
+  m_PrefabInstance: {fileID: 1895806996}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1895806998 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9145434416168656998, guid: b9a0b7f2144188244b7216b92acafc86,
+    type: 3}
+  m_PrefabInstance: {fileID: 1895806996}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1927485368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1494,6 +1524,10 @@ GameObject:
   - component: {fileID: 1927485370}
   - component: {fileID: 1927485377}
   - component: {fileID: 1927485378}
+  - component: {fileID: 1927485382}
+  - component: {fileID: 1927485381}
+  - component: {fileID: 1927485380}
+  - component: {fileID: 1927485379}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1665,7 +1699,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1927485377}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 1927485379}
   variables: []
   description: 
   stepPause: 0
@@ -1705,7 +1740,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 219.8593
+    x: 218.48943
     y: 31.557816
     width: 117.94518
     height: 40
@@ -1716,6 +1751,10 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 1927485382}
+  - {fileID: 1927485381}
+  - {fileID: 1927485380}
+  - {fileID: 1927485379}
   - {fileID: 1927485378}
   suppressAllAutoSelections: 0
 --- !u!114 &1927485378
@@ -1739,3 +1778,105 @@ MonoBehaviour:
     stringVal: 
   startIndex: 0
   callMode: 0
+--- !u!114 &1927485379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927485368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 11
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 1
+  durationOLD: 0
+--- !u!114 &1927485380
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927485368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 10
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 1895806998}
+  targetComponentAssemblyName: MutantCellManager, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: MutantCellManager
+  targetMethod: ShowResultText
+  targetMethodText: 'ShowResultText (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1927485381
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927485368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 9
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 0.5
+  durationOLD: 0
+--- !u!114 &1927485382
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927485368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 665e8847cab3749f597622c6c52997ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 8
+  indentLevel: 0
+  _targetObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 1895806997}
+  _tweenName:
+    stringRef: {fileID: 0}
+    stringVal: 
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 1
+  easeType: 0
+  loopType: 0
+  stopPreviousTweens: 0
+  waitUntilFinished: 1
+  targetObjectOLD: {fileID: 0}
+  tweenNameOLD: 
+  durationOLD: 0
+  _toTransform:
+    transformRef: {fileID: 0}
+    transformVal: {fileID: 0}
+  _toScale:
+    vector3Ref: {fileID: 0}
+    vector3Val: {x: 1, y: 1, z: 1}
+  toTransformOLD: {fileID: 0}
+  toScaleOLD: {x: 0, y: 0, z: 0}
