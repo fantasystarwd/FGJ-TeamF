@@ -376,18 +376,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &803550974 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2912307479984535897, guid: b9a0b7f2144188244b7216b92acafc86,
-    type: 3}
-  m_PrefabInstance: {fileID: 911167107147439255}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b113ccfa78fb354c8cf2b07739793d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &836533086 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 911167107966134217, guid: b9a0b7f2144188244b7216b92acafc86,
@@ -649,14 +637,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1905907662, guid: b9a0b7f2144188244b7216b92acafc86, type: 3}
-      propertyPath: cells.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1905907662, guid: b9a0b7f2144188244b7216b92acafc86, type: 3}
-      propertyPath: cells.Array.data[0]
-      value: 
-      objectReference: {fileID: 803550974}
     - target: {fileID: 911167107506542657, guid: b9a0b7f2144188244b7216b92acafc86,
         type: 3}
       propertyPath: m_Name
