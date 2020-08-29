@@ -11,6 +11,9 @@ public class MutantCellManager : MonoBehaviour
     public Transform parent;
     public int TotalTime = 10;
     public Text countdownText;
+    public Text resultText;
+
+    public Fungus.Flowchart flowchart;
 
     private CooldownTimer timer;
     private float timer_float;
@@ -19,11 +22,14 @@ public class MutantCellManager : MonoBehaviour
     private int sec;
     private int min;
     private int hr;
+
+    private int lastMutantCellCount;
     // Start is called before the first frame update
     void Start()
     {
         timer = new CooldownTimer(TotalTime);
         timer.TimerCompleteEvent += Stop;
+        timer.TimerCompleteEvent += ShowResult;
         timer.Start();
         InvokeRepeating("AllCellDoDuplicate", 2, 2);
     }
@@ -62,6 +68,17 @@ public class MutantCellManager : MonoBehaviour
         }
         cells.Clear();
         Debug.Log("總數 = " + sum);
+        lastMutantCellCount = sum;
+    }
+
+    void ShowResult()
+    {
+        flowchart.ExecuteBlock("Show Result");
+    }
+
+    public void ShowResultText()
+    {
+        resultText.text = "總數 = " + lastMutantCellCount;
     }
 
     void AllCellDoDuplicate()
