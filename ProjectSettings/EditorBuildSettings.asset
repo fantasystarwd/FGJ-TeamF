@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/checkPoint7.unity
     guid: 4a565c631d6410146b6c8f214ab8799a
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: 434a97c7c024e5848a96ebae2526fbc9
   m_configObjects: {}
