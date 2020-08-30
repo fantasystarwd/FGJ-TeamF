@@ -14,6 +14,7 @@ public class MouseManager : MonoBehaviour
     public Animator mouseAnimator;
     public Text mouseTag;
     public Text mouseResult;
+    public Text survivalRateText;
     public GameObject Syringe;
     public int roundCount = 10;
     public float[] ProbabilityArray = new float[] { 50, 25, 20, 5 };
@@ -23,6 +24,8 @@ public class MouseManager : MonoBehaviour
     private bool canOut = false;
     private bool canInjection = false;
     private int mouseTagValue = 1;
+
+    private float survivalRate = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +60,8 @@ public class MouseManager : MonoBehaviour
             if(mouseTagValue == roundCount)
             {
                 mouseTagValue = 1;
+                Debug.Log("存活率 = " + survivalRate);
+                survivalRateText.text = "目標存活率 : "+ survivalRate + "%";
                 SummaryPanel.SetActive(true);
             }
             else
@@ -85,6 +90,7 @@ public class MouseManager : MonoBehaviour
         {
             case (int)InjectionResultKey.Alife:
                 mouseResult.text = "存活";
+                survivalRate += 10;
                 Debug.Log("存活");
                 break;
             case (int)InjectionResultKey.Dead:

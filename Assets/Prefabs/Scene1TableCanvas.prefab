@@ -1512,7 +1512,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
+  selectedBlocks:
+  - {fileID: 266732900651187542}
   selectedCommands: []
   variables: []
   description: 
@@ -2381,6 +2382,7 @@ MonoBehaviour:
   resultText: {fileID: 0}
   flowchart: {fileID: 0}
   talkFlowchart: {fileID: 3281217203991515944}
+  touchLine: 5
 --- !u!1001 &6547000781294371812
 PrefabInstance:
   m_ObjectHideFlags: 0
