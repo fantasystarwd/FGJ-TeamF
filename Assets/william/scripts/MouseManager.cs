@@ -36,9 +36,14 @@ public class MouseManager : MonoBehaviour
     public CheckList checkList;
 
     private float afileRate = 0;
+
+    public GameObject nextBtn;
+    public GameObject injectionBtn;
     // Start is called before the first frame update
     void Start()
     {
+        nextBtn.SetActive(false);
+        Invoke("CallMouseIn", 2);
     }
 
     // Update is called once per frame
@@ -51,6 +56,7 @@ public class MouseManager : MonoBehaviour
     {
         if (!canOut)
         {
+            injectionBtn.SetActive(true);
             mouse.sprite = alifeMouse;
             Syringe.SetActive(false);
             mouseAnimator.SetTrigger("MouseIn");
@@ -64,15 +70,18 @@ public class MouseManager : MonoBehaviour
     {
         if (canOut && !canInjection)
         {
+            //nextBtn.SetActive(true);
+            
             mouseResult.text = "";
             Syringe.SetActive(false);
+            nextBtn.SetActive(false);
             mouseAnimator.SetTrigger("MouseOut");
             canOut = false;
             if(mouseTagValue == eachRoundCount)
             {
                 mouseTagValue = 1;
                 roundTimes++;
-                afileRate = 0;
+                
                 if (roundTimes == totalRoundCount)
                 {
                     summaryResult.text = "目標存活率 =  "+ afileRate+"%";
@@ -87,13 +96,20 @@ public class MouseManager : MonoBehaviour
                     NormalSummaryBtn.SetActive(true);
                     FinalSummaryBtn.SetActive(false);
                 }
-                
+                afileRate = 0;
             }
             else
             {
                 mouseTagValue++;
             }
+            Invoke("CallMouseIn", 1);
+            Invoke("AfterOut", 1.5f);
         } 
+    }
+
+    private void AfterOut()
+    {
+        injectionBtn.SetActive(true);
     }
 
     public void CallSyringeInjection()
@@ -103,7 +119,15 @@ public class MouseManager : MonoBehaviour
             //mouseAnimator.SetTrigger("ResetSyringe");
             Syringe.SetActive(true);
             mouseAnimator.SetTrigger("SyringeInjection");
+            injectionBtn.SetActive(false);
+            Invoke("AfterInjection", 1);
         }
+    }
+
+    private void AfterInjection()
+    {
+        nextBtn.SetActive(true);
+        
     }
 
     public void CheckResult()
