@@ -1248,7 +1248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 0}
+  selectedFlowchart: {fileID: 1927485375}
 --- !u!4 &1843101154
 Transform:
   m_ObjectHideFlags: 1
@@ -1429,6 +1429,7 @@ GameObject:
   - component: {fileID: 1927485381}
   - component: {fileID: 1927485380}
   - component: {fileID: 1927485379}
+  - component: {fileID: 1927485383}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1573,6 +1574,7 @@ MonoBehaviour:
   eventHandler: {fileID: 1927485373}
   commandList:
   - {fileID: 1927485370}
+  - {fileID: 1927485383}
   suppressAllAutoSelections: 0
 --- !u!114 &1927485375
 MonoBehaviour:
@@ -1599,9 +1601,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1927485372}
+  - {fileID: 1927485374}
   selectedCommands:
-  - {fileID: 1927485369}
+  - {fileID: 1927485383}
   variables: []
   description: 
   stepPause: 0
@@ -1781,3 +1783,21 @@ MonoBehaviour:
     vector3Val: {x: 1, y: 1, z: 1}
   toTransformOLD: {fileID: 0}
   toScaleOLD: {x: 0, y: 0, z: 0}
+--- !u!114 &1927485383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927485368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1902400ccc99b45d69ad01cb86b57d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 12
+  indentLevel: 0
+  musicClip: {fileID: 8300000, guid: 6ba3cb9181bc35b4d8992cbdb80a6b94, type: 3}
+  atTime: 0
+  loop: 1
+  fadeDuration: 1
