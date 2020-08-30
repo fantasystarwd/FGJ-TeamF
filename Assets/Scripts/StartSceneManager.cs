@@ -14,7 +14,9 @@ public class StartSceneManager : MonoBehaviour
         GlobalParameter.stageResult_1 = false;
         GlobalParameter.stageResult_2 = false;
         GlobalParameter.stageResult_3 = false;
-        FadeOut();
+        GlobalParameter.goOtherCompany = false;
+        GlobalParameter.stageResult_2_fail = false;
+    FadeOut();
     }
 
     public void Stop()
