@@ -25,6 +25,7 @@ public class MutantCellManager : MonoBehaviour
     private int hr;
 
     private int touchCount = 0;
+    public int touchLine = 5;
 
     private int lastMutantCellCount;
     // Start is called before the first frame update
@@ -34,7 +35,7 @@ public class MutantCellManager : MonoBehaviour
         timer.TimerCompleteEvent += Stop;
         timer.TimerCompleteEvent += ShowResult;
         timer.Start();
-        InvokeRepeating("AllCellDoDuplicate", 2, 2);
+        InvokeRepeating("AllCellDoDuplicate", 2, 1.5f);
     }
 
     // Update is called once per frame
@@ -47,7 +48,7 @@ public class MutantCellManager : MonoBehaviour
     void CallAllCellDoDuplicate(MutantCell owner)
     {
         touchCount++;
-        if(touchCount > 5)
+        if(touchCount > touchLine)
         {
             talkFlowchart.ExecuteBlock("touchTip");
             touchCount = 0;
@@ -59,7 +60,7 @@ public class MutantCellManager : MonoBehaviour
         newObj.transform.localScale = Vector3.one;
         newObj.transform.SetPositionAndRotation(parent.transform.position, Quaternion.identity);
         cells.Add(newObj.GetComponent<MutantCell>());
-        InvokeRepeating("AllCellDoDuplicate", 2, 2);
+        InvokeRepeating("AllCellDoDuplicate", 2, 1.5f);
     }
 
     void Stop()
@@ -93,7 +94,9 @@ public class MutantCellManager : MonoBehaviour
     void AllCellDoDuplicate()
     {
         List<MutantCell> _cells = new List<MutantCell>();
-        if ((cells==null?0:cells.Count) > (Math.Pow(2,15))) return;
+        if ((cells == null ? 0 : cells.Count) > (Math.Pow(2, 10))) {
+            Debug.Log("到上限");
+            return; }
         for (int i = 0; i < cells.Count; i++)
         {
             if (cells[i] != null)
@@ -101,7 +104,7 @@ public class MutantCellManager : MonoBehaviour
                 for (int j = 0; j < 2; j++)
                 {
                     GameObject newObj = Instantiate(cellPrefab) as GameObject;
-                    Vector3 position = new Vector3(UnityEngine.Random.Range(-10.0f, 10.0f) + cells[i].transform.position.x, UnityEngine.Random.Range(-10.0f, 10.0f) + cells[i].transform.position.y, cells[i].transform.position.z);
+                    Vector3 position = new Vector3(UnityEngine.Random.Range(-20.0f, 20.0f) + cells[i].transform.position.x, UnityEngine.Random.Range(-20.0f, 20.0f) + cells[i].transform.position.y, cells[i].transform.position.z);
                     newObj.transform.SetParent(parent);
                     newObj.transform.localScale = Vector3.one;
                     newObj.transform.SetPositionAndRotation(position, Quaternion.identity);
