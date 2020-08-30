@@ -14,6 +14,7 @@ public class MutantCellManager : MonoBehaviour
     public Text resultText;
 
     public Fungus.Flowchart flowchart;
+    public Fungus.Flowchart touchFlowchart;
 
     private CooldownTimer timer;
     private float timer_float;
@@ -22,7 +23,8 @@ public class MutantCellManager : MonoBehaviour
     private int sec;
     private int min;
     private int hr;
-
+    private int touchCount = 0;
+    private int touchTime = 0;
     private int lastMutantCellCount;
     // Start is called before the first frame update
     void Start()
@@ -43,6 +45,20 @@ public class MutantCellManager : MonoBehaviour
 
     void CallAllCellDoDuplicate(MutantCell owner)
     {
+        touchCount++;
+        if(touchCount >= 5)
+        {
+            touchTime++;
+            touchCount = 0;
+            string text = "";
+            for (int i =0;i< touchTime; i++)
+            {
+                text += "碰屁碰";
+            }
+            
+            touchFlowchart.SetStringVariable("touchString", text);
+            touchFlowchart.ExecuteBlock("touch");
+        }
         Stop();
         
         GameObject newObj = Instantiate(cellPrefab) as GameObject;
