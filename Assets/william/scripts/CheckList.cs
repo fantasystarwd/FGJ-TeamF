@@ -22,11 +22,11 @@ public class CheckList : MonoBehaviour
         checkLists[index].SetActive(true);
         if (result)
         {
-            checkLists[index].transform.localPosition = new Vector3(367, checkLists[index].transform.localPosition.y, 0);
+            checkLists[index].transform.localPosition = new Vector3(18, checkLists[index].transform.localPosition.y, 0);
         }
         else
         {
-            checkLists[index].transform.localPosition = new Vector3(432, checkLists[index].transform.localPosition.y, 0);
+            checkLists[index].transform.localPosition = new Vector3(81, checkLists[index].transform.localPosition.y, 0);
         }
     }
 

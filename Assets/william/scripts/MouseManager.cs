@@ -5,8 +5,8 @@ public enum InjectionResultKey
 {
     Alife,
     Dead,
-    Deform,
-    SuperDeform,
+    //Deform,
+    //SuperDeform,
 }
 
 public class MouseManager : MonoBehaviour
@@ -14,15 +14,28 @@ public class MouseManager : MonoBehaviour
     public Animator mouseAnimator;
     public Text mouseTag;
     public Text mouseResult;
+    public Text summaryResult;
     public GameObject Syringe;
-    public int roundCount = 10;
-    public float[] ProbabilityArray = new float[] { 50, 25, 20, 5 };
+    public int eachRoundCount = 10;
+    public int totalRoundCount = 2;
+    public float[] ProbabilityArray = new float[] { 30, 70 };
+    public float[] FinalProbabilityArray = new float[] { 100 };
 
     public GameObject SummaryPanel;
+    public GameObject NormalSummaryBtn;
+    public GameObject FinalSummaryBtn;
+
+    public Image mouse;
+    public Sprite alifeMouse;
+    public Sprite deadMouse;
 
     private bool canOut = false;
     private bool canInjection = false;
     private int mouseTagValue = 1;
+    private int roundTimes = 1;
+    public CheckList checkList;
+
+    private float afileRate = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +51,7 @@ public class MouseManager : MonoBehaviour
     {
         if (!canOut)
         {
+            mouse.sprite = alifeMouse;
             Syringe.SetActive(false);
             mouseAnimator.SetTrigger("MouseIn");
             mouseTag.text = mouseTagValue.ToString();
@@ -54,10 +68,26 @@ public class MouseManager : MonoBehaviour
             Syringe.SetActive(false);
             mouseAnimator.SetTrigger("MouseOut");
             canOut = false;
-            if(mouseTagValue == roundCount)
+            if(mouseTagValue == eachRoundCount)
             {
                 mouseTagValue = 1;
-                SummaryPanel.SetActive(true);
+                roundTimes++;
+                afileRate = 0;
+                if (roundTimes == totalRoundCount)
+                {
+                    summaryResult.text = "目標存活率 =  "+ afileRate+"%";
+                    SummaryPanel.SetActive(true);
+                    NormalSummaryBtn.SetActive(false);
+                    FinalSummaryBtn.SetActive(true);
+                }
+                else
+                {
+                    summaryResult.text = "目標存活率 =  " + afileRate + "%";
+                    SummaryPanel.SetActive(true);
+                    NormalSummaryBtn.SetActive(true);
+                    FinalSummaryBtn.SetActive(false);
+                }
+                
             }
             else
             {
@@ -79,25 +109,44 @@ public class MouseManager : MonoBehaviour
     public void CheckResult()
     {
         canInjection = false;
-        int result = (int)Choose(ProbabilityArray);
+        int result;
+        if (roundTimes == totalRoundCount - 1)
+        {
+            result = (int)Choose(ProbabilityArray);
+        }
+        else
+        {
+            result = (int)Choose(FinalProbabilityArray);
+        }
+        
         Debug.Log("CheckResult = " + ProbabilityArray[result]);
         switch (result)
         {
             case (int)InjectionResultKey.Alife:
                 mouseResult.text = "存活";
+                afileRate += 10;
                 Debug.Log("存活");
+                checkList.SetCheck(mouseTagValue-1, true);
                 break;
             case (int)InjectionResultKey.Dead:
                 mouseResult.text = "死亡";
                 Debug.Log("死亡");
+                mouse.sprite = deadMouse;
+                checkList.SetCheck(mouseTagValue-1, false);
+                mouseAnimator.SetTrigger("MouseDead");
                 break;
-            case (int)InjectionResultKey.Deform:
-                mouseResult.text = "變異";
-                Debug.Log("變異");
-                break;
-            case (int)InjectionResultKey.SuperDeform:
-                mouseResult.text = "超級變異";
-                Debug.Log("超級變異");
+            //case (int)InjectionResultKey.Deform:
+            //    mouseResult.text = "變異";
+            //    Debug.Log("變異");
+            //    break;
+            //case (int)InjectionResultKey.SuperDeform:
+            //    mouseResult.text = "超級變異";
+            //    Debug.Log("超級變異");
+            //    break;
+            default:
+                mouseResult.text = "存活";
+                afileRate += 10;
+                Debug.Log("存活");
                 break;
         }
     }
@@ -122,5 +171,10 @@ public class MouseManager : MonoBehaviour
                 randomPoint -= Probs[i];
         }
         return Probs.Length - 1;
+    }
+
+    public void Reset()
+    {
+        checkList.Reset();
     }
 }
