@@ -1504,80 +1504,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 791253325}
   m_CullTransparentMesh: 0
---- !u!1 &809728218
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 809728219}
-  - component: {fileID: 809728221}
-  - component: {fileID: 809728220}
-  m_Layer: 5
-  m_Name: Image (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &809728219
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 809728218}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3425965070486102734}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -47, y: 83}
-  m_SizeDelta: {x: 60, y: 75}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &809728220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 809728218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 31fdc210dffa46a4dae8cb5ea85603b3, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &809728221
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 809728218}
-  m_CullTransparentMesh: 0
 --- !u!1 &954405128
 GameObject:
   m_ObjectHideFlags: 0
@@ -2684,7 +2610,6 @@ GameObject:
   - component: {fileID: 1927485411}
   - component: {fileID: 1927485410}
   - component: {fileID: 1927485385}
-  - component: {fileID: 1927485429}
   - component: {fileID: 1927485428}
   - component: {fileID: 1927485427}
   - component: {fileID: 1927485426}
@@ -2737,6 +2662,14 @@ GameObject:
   - component: {fileID: 1927485464}
   - component: {fileID: 1927485463}
   - component: {fileID: 1927485462}
+  - component: {fileID: 1927485467}
+  - component: {fileID: 1927485466}
+  - component: {fileID: 1927485465}
+  - component: {fileID: 1927485429}
+  - component: {fileID: 1927485469}
+  - component: {fileID: 1927485468}
+  - component: {fileID: 1927485471}
+  - component: {fileID: 1927485470}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2828,7 +2761,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 296.35608
     y: 29.328857
-    width: 115.31644
+    width: 151.46341
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2837,6 +2770,8 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 1927485470}
+  - {fileID: 1927485468}
   - {fileID: 1927485371}
   - {fileID: 1927485369}
   suppressAllAutoSelections: 0
@@ -2871,7 +2806,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -181.79747
     y: 32
-    width: 109.240486
+    width: 145.60974
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2898,11 +2833,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 519.9131, y: -174.34682}
+  scrollPos: {x: 193.6754, y: 15.160568}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.79000014
+  zoom: 0.8200001
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -2910,8 +2845,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1927485411}
-  selectedCommands: []
+  - {fileID: 1927485372}
+  selectedCommands:
+  - {fileID: 1927485470}
   variables:
   - {fileID: 1927485423}
   - {fileID: 1927485421}
@@ -3142,7 +3078,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -170.55154
     y: 113.74956
-    width: 186.2025
+    width: 219.75609
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3348,7 +3284,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 71.914116
     y: 109.64
-    width: 152.78479
+    width: 187.56096
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3427,7 +3363,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 81.503174
     y: 176.76324
-    width: 130.50632
+    width: 166.09755
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3742,7 +3678,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 302.05106
     y: 109.63996
-    width: 104.1772
+    width: 140.73169
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3784,7 +3720,7 @@ MonoBehaviour:
       typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       typeFullname: System.Int32
-      intValue: 3
+      intValue: 4
       boolValue: 0
       floatValue: 0
       stringValue: 
@@ -3836,9 +3772,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 297.05112
-    y: 181.42078
-    width: 109.240486
+    x: 298.31696
+    y: 245.97775
+    width: 145.60974
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3847,7 +3783,8 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 1927485377}
   commandList:
-  - {fileID: 1927485429}
+  - {fileID: 1927485471}
+  - {fileID: 1927485469}
   - {fileID: 1927485407}
   - {fileID: 1927485406}
   suppressAllAutoSelections: 0
@@ -3903,7 +3840,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -159.56424
     y: 221.59889
-    width: 89.999985
+    width: 127.073166
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4036,7 +3973,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -161.05043
     y: 393.06433
-    width: 93.03796
+    width: 130
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4169,7 +4106,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -167.33614
     y: 331.37015
-    width: 102.15188
+    width: 138.78049
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4371,7 +4308,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 115.14247
     y: 319.18228
-    width: 73.797455
+    width: 111.46341
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4514,7 +4451,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -167.60619
     y: 274.5714
-    width: 106.202515
+    width: 142.68292
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4587,24 +4524,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1927485368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 44
+  itemId: 110
   indentLevel: 0
-  description: 
-  targetObject: {fileID: 1735859506}
-  targetComponentAssemblyName: CheckPoint2Manager, Assembly-CSharp, Version=0.0.0.0,
-    Culture=neutral, PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: CheckPoint2Manager
-  targetMethod: Middle_End
-  targetMethodText: 'Middle_End (): Void'
-  methodParameters: []
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 1927485408}
+  startLabel:
+    stringRef: {fileID: 0}
+    stringVal: 
+  startIndex: 0
   callMode: 0
 --- !u!114 &1927485430
 MonoBehaviour:
@@ -7522,7 +7452,7 @@ MonoBehaviour:
   durationOLD: 0
 --- !u!114 &1927485458
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -7539,7 +7469,7 @@ MonoBehaviour:
   loop: 1
 --- !u!114 &1927485459
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -7553,7 +7483,7 @@ MonoBehaviour:
   indentLevel: 0
 --- !u!114 &1927485460
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -7571,7 +7501,7 @@ MonoBehaviour:
   fadeDuration: 1
 --- !u!114 &1927485461
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -7590,7 +7520,7 @@ MonoBehaviour:
     booleanVal: 0
 --- !u!114 &1927485462
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -7609,7 +7539,7 @@ MonoBehaviour:
     booleanVal: 0
 --- !u!114 &1927485463
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -7628,7 +7558,7 @@ MonoBehaviour:
     booleanVal: 0
 --- !u!114 &1927485464
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -7645,6 +7575,133 @@ MonoBehaviour:
   interactableState:
     booleanRef: {fileID: 0}
     booleanVal: 0
+--- !u!114 &1927485465
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927485368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 109
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 1735859506}
+  targetComponentAssemblyName: CheckPoint2Manager, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: CheckPoint2Manager
+  targetMethod: Middle_End
+  targetMethodText: 'Middle_End (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1927485466
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927485368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10eaeba5e91be479e95d4fa48679f549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 1927485467}
+  suppressBlockAutoSelect: 0
+  targetButton: {fileID: 791253327}
+--- !u!114 &1927485467
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927485368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 310.46652
+    y: 180.67592
+    width: 118.29268
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 108
+  blockName: Dig Success
+  description: 
+  eventHandler: {fileID: 1927485466}
+  commandList:
+  - {fileID: 1927485465}
+  - {fileID: 1927485429}
+  suppressAllAutoSelections: 0
+--- !u!114 &1927485468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927485368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b359b09a7ba2e4af981f07c07f8af85a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 112
+  indentLevel: 0
+--- !u!114 &1927485469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927485368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b359b09a7ba2e4af981f07c07f8af85a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 111
+  indentLevel: 0
+--- !u!114 &1927485470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927485368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bce3bd679be2c94196f3f6aaeb33f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 114
+  indentLevel: 0
+--- !u!114 &1927485471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927485368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bce3bd679be2c94196f3f6aaeb33f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 113
+  indentLevel: 0
 --- !u!1 &1974975072
 GameObject:
   m_ObjectHideFlags: 0
@@ -8401,7 +8458,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 582980127}
-  - {fileID: 809728219}
   m_Father: {fileID: 7234562723265799238}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
