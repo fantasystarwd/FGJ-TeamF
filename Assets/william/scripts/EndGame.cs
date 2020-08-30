@@ -19,6 +19,11 @@ public class EndGame : MonoBehaviour
 
     public void check()
     {
+        if (GlobalParameter.goOtherCompany)
+        {
+            flowchart.ExecuteBlock("B");
+            return;
+        }
         if (!GlobalParameter.stageResult_1 && GlobalParameter.stageResult_2 && !GlobalParameter.stageResult_3)
         {
             Debug.Log("結局A");
