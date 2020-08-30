@@ -24,11 +24,12 @@ public class CheckPoint2Manager : MonoBehaviour
     private List<Color> addedColorList = new List<Color>();
     private Color[] successColorList = new Color[3] { Color.yellow, Color.green, Color.blue };
 
-    public Image petrl_water;   
+    public Image petrl_water;
 
+    //挖腳
     public void Middle_End()
     {
-        Debug.Log("Moddle End");
+        GlobalParameter.goOtherCompany = true;
     }
 
     public void Add_New_Color_In_Petrl(TestTubeColor tubeColor)
@@ -67,6 +68,7 @@ public class CheckPoint2Manager : MonoBehaviour
         }
     }
 
+    // 製作藥物成功 or 失敗
     void CheckNext()
     {
         for(int i = 0;i < successColorList.Length; i++)
@@ -75,7 +77,8 @@ public class CheckPoint2Manager : MonoBehaviour
             {
                 // fail
                 Debug.Log("fail");
-                flowchart.ExecuteBlock("Leave CheckPoint");
+                GlobalParameter.stageResult_2_fail = true;
+                flowchart.ExecuteBlock("Middle End Game");
                 return;
             }
         }

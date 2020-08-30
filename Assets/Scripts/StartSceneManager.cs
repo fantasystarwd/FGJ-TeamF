@@ -11,6 +11,9 @@ public class StartSceneManager : MonoBehaviour
     Tween tween;
     public void playStartSceneAnim()
     {
+        GlobalParameter.stageResult_1 = false;
+        GlobalParameter.stageResult_2 = false;
+        GlobalParameter.stageResult_3 = false;
         FadeOut();
     }
 
