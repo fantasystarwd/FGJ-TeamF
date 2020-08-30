@@ -60,7 +60,6 @@ public class MutantCellManager : MonoBehaviour
             touchFlowchart.ExecuteBlock("touch");
         }
         Stop();
-        
         GameObject newObj = Instantiate(cellPrefab) as GameObject;
         newObj.transform.SetParent(parent);
         newObj.transform.localScale = Vector3.one;
@@ -89,6 +88,10 @@ public class MutantCellManager : MonoBehaviour
 
     void ShowResult()
     {
+        if (touchTime != 0)
+        {
+            GlobalParameter.stageResult_1 = true;
+        }
         flowchart.ExecuteBlock("Show Result");
     }
 
