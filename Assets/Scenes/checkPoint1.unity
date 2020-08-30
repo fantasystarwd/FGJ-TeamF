@@ -1573,8 +1573,8 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 1927485373}
   commandList:
-  - {fileID: 1927485370}
   - {fileID: 1927485383}
+  - {fileID: 1927485370}
   suppressAllAutoSelections: 0
 --- !u!114 &1927485375
 MonoBehaviour:
@@ -1600,10 +1600,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 1927485374}
-  selectedCommands:
-  - {fileID: 1927485383}
+  selectedBlocks: []
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -1785,7 +1783,7 @@ MonoBehaviour:
   toScaleOLD: {x: 0, y: 0, z: 0}
 --- !u!114 &1927485383
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
