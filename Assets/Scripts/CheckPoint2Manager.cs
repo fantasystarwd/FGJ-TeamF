@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using Fungus;
 
 
 public class CheckPoint2Manager : MonoBehaviour
 {
+    public Flowchart flowchart;
+
     [SerializeField]
     public enum TestTubeColor
     {
@@ -16,7 +19,10 @@ public class CheckPoint2Manager : MonoBehaviour
         Blue
     }
 
+    private int counter = 0;
+
     private List<Color> addedColorList = new List<Color>();
+    private Color[] successColorList = new Color[3] { Color.yellow, Color.green, Color.blue };
 
     public Image petrl_water;   
 
@@ -53,5 +59,29 @@ public class CheckPoint2Manager : MonoBehaviour
         targetColor.a = 0.5f;
 
         Tween tween = DOTween.To(() => petrl_water.color, r => petrl_water.color = r, targetColor, 1.5f).SetEase(Ease.OutCubic);
+
+        counter++;
+        if(counter >= successColorList.Length)
+        {
+            Invoke("CheckNext", 1.5f);
+        }
+    }
+
+    void CheckNext()
+    {
+        for(int i = 0;i < successColorList.Length; i++)
+        {
+            if(addedColorList[i] != successColorList[i])
+            {
+                // fail
+                Debug.Log("fail");
+                flowchart.ExecuteBlock("Leave CheckPoint");
+                return;
+            }
+        }
+        //
+        //success
+        Debug.Log("succcess");
+        flowchart.ExecuteBlock("Leave CheckPoint");
     }
 }
