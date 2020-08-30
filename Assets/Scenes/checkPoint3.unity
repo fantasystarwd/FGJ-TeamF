@@ -698,7 +698,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1927485370
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -752,7 +752,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 21.013748
     y: 32.068573
-    width: 149.72598
+    width: 152.73969
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -795,7 +795,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -178
     y: 33
-    width: 145.34244
+    width: 147.26024
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -830,8 +830,7 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 1927485372}
+  selectedBlocks: []
   selectedCommands: []
   variables: []
   description: 
@@ -860,7 +859,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1927485377
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}

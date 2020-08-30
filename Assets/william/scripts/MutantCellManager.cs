@@ -84,6 +84,7 @@ public class MutantCellManager : MonoBehaviour
     void AllCellDoDuplicate()
     {
         List<MutantCell> _cells = new List<MutantCell>();
+        if ((cells==null?0:cells.Count) > (Math.Pow(2,15))) return;
         for (int i = 0; i < cells.Count; i++)
         {
             if (cells[i] != null)
