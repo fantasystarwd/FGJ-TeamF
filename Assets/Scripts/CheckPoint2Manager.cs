@@ -82,6 +82,7 @@ public class CheckPoint2Manager : MonoBehaviour
         //
         //success
         Debug.Log("succcess");
-        flowchart.ExecuteBlock("Leave CheckPoint");
+        GlobalParameter.stageResult_2 = true;
+       flowchart.ExecuteBlock("Leave CheckPoint");
     }
 }

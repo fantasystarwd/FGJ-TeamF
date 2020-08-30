@@ -39,6 +39,8 @@ public class MouseManager : MonoBehaviour
 
     public GameObject nextBtn;
     public GameObject injectionBtn;
+
+    public Fungus.Flowchart flowchart;
     // Start is called before the first frame update
     void Start()
     {
@@ -88,6 +90,7 @@ public class MouseManager : MonoBehaviour
                     SummaryPanel.SetActive(true);
                     NormalSummaryBtn.SetActive(false);
                     FinalSummaryBtn.SetActive(true);
+
                 }
                 else
                 {
@@ -200,5 +203,16 @@ public class MouseManager : MonoBehaviour
     public void Reset()
     {
         checkList.Reset();
+    }
+
+    public void MakeFake()
+    {
+        GlobalParameter.stageResult_3 = true;
+        flowchart.ExecuteBlock("Leave CheckPoint");
+    }
+
+    public void GoEnd()
+    {
+        flowchart.ExecuteBlock("Leave CheckPoint");
     }
 }
