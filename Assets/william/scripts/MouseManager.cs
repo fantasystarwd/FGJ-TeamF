@@ -46,6 +46,7 @@ public class MouseManager : MonoBehaviour
     {
         nextBtn.SetActive(false);
         Invoke("CallMouseIn", 2);
+        Invoke("AfterOut", 2.5f);
     }
 
     // Update is called once per frame
@@ -58,7 +59,7 @@ public class MouseManager : MonoBehaviour
     {
         if (!canOut)
         {
-            injectionBtn.SetActive(true);
+            //injectionBtn.SetActive(true);
             mouse.sprite = alifeMouse;
             Syringe.SetActive(false);
             mouseAnimator.SetTrigger("MouseIn");
@@ -123,6 +124,7 @@ public class MouseManager : MonoBehaviour
             Syringe.SetActive(true);
             mouseAnimator.SetTrigger("SyringeInjection");
             injectionBtn.SetActive(false);
+            canInjection = false;
             Invoke("AfterInjection", 1);
         }
     }
@@ -135,7 +137,7 @@ public class MouseManager : MonoBehaviour
 
     public void CheckResult()
     {
-        canInjection = false;
+        
         int result;
         if (roundTimes == totalRoundCount - 1)
         {

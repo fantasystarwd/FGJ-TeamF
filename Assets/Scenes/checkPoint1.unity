@@ -1270,6 +1270,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 84941714, guid: b9a0b7f2144188244b7216b92acafc86, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 85bf37f6adb311c46a6389fcc3106ae4,
+        type: 3}
     - target: {fileID: 1905907662, guid: b9a0b7f2144188244b7216b92acafc86, type: 3}
       propertyPath: flowchart
       value: 
@@ -1393,6 +1398,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6705964461069301759, guid: b9a0b7f2144188244b7216b92acafc86,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 85bf37f6adb311c46a6389fcc3106ae4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9a0b7f2144188244b7216b92acafc86, type: 3}
 --- !u!1 &1895806997 stripped
@@ -1589,7 +1600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 503.42813, y: 71.18188}
+  scrollPos: {x: 156.85289, y: 147.89421}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -1600,8 +1611,10 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
-  selectedCommands: []
+  selectedBlocks:
+  - {fileID: 1927485377}
+  selectedCommands:
+  - {fileID: 1927485380}
   variables: []
   description: 
   stepPause: 0
